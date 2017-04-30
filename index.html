@@ -444,20 +444,29 @@ hexo d         //hexo deploy,部署到网站,将本地blog部署到github的仓�
 <h3 id="6-其他技巧"><a href="#6-其他技巧" class="headerlink" title="6. 其他技巧"></a>6. 其他技巧</h3></blockquote>
 </li>
 </ul>
-<h4 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h4><ul>
+<h4 id="6-1指令"><a href="#6-1指令" class="headerlink" title="6.1指令"></a>6.1指令</h4><ul>
 <li><p>清缓存</p>
 <pre><code>hexo clean
 </code></pre></li>
 <li><p>新建文章</p>
 <pre><code>hexo new &lt;layout&gt;
 </code></pre><p>eg :添加 about 页面</p>
-<h4 id="上传readme-md"><a href="#上传readme-md" class="headerlink" title="上传readme.md"></a>上传readme.md</h4></li>
+<h4 id="6-2上传readme-md"><a href="#6-2上传readme-md" class="headerlink" title="6.2上传readme.md"></a>6.2上传readme.md</h4></li>
 <li>在本地写好的 README.mdown 文件复制到 source 文件夹中，再去执行hexo deploy</li>
-<li>在本地写好的 README.md 文件复制到 source 文件夹中，修改Hexo目录下的_config.yml。将skip_render参数的值设置上。skip_render: README.md，再去执行hexo deploy<h4 id="使用图片"><a href="#使用图片" class="headerlink" title="使用图片"></a>使用图片</h4></li>
+<li>在本地写好的 README.md 文件复制到 source 文件夹中，修改Hexo目录下的_config.yml。将skip_render参数的值设置上。skip_render: README.md，再去执行hexo deploy<h4 id="6-3使用图片"><a href="#6-3使用图片" class="headerlink" title="6.3使用图片"></a>6.3使用图片</h4></li>
+</ul>
+<ol>
+<li>插件</li>
+</ol>
+<ul>
 <li>安装插件<br>npm install <a href="https://github.com/CodeFalling/hexo-asset-image" target="_blank" rel="external">https://github.com/CodeFalling/hexo-asset-image</a> –save</li>
 <li>修改_config.yml<br>post_asset_folder: true</li>
-<li>使用相对路径</li>
+<li>/source/_posts下创建和md文件同名的目录，在里面放该md需要的图片</li>
+<li>插入图片<br><code>![](目录名/文件名.png)</code></li>
 </ul>
+<ol>
+<li>放在根目录<br>图片放在 source/img 下，然后在 markdown 里写 <code>![img](/source/img/img.png)</code> 。显然这样在本地的编辑器里完全不能正确识别图片的位置。</li>
+</ol>
 <h2 id="申请域名"><a href="#申请域名" class="headerlink" title="申请域名"></a>申请域名</h2><ul>
 <li><p>去<a href="https://wanwang.aliyun.com/?spm=5176.8142029.388261.24.rP16I5" target="_blank" rel="external">万宝</a>注册域名</p>
 </li>
