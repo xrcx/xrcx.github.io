@@ -3,16 +3,19 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>ѧ��ֹ��</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+  <meta name="description" content="���Լ��������£����Լ��������£����ڼ���~">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ѧ��ֹ��">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="ѧ��ֹ��">
+<meta property="og:description" content="���Լ��������£����Լ��������£����ڼ���~">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="ѧ��ֹ��">
+<meta name="twitter:description" content="���Լ��������£����Լ��������£����ڼ���~">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="ѧ��ֹ��" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -33,8 +36,12 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
+        <a href="/" id="logo">ѧ��ֹ��</a>
       </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">ѧ��ֹ��</a>
+        </h2>
       
     </div>
     <div id="header-inner" class="inner">
@@ -48,9 +55,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -87,7 +94,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p><img src="用 Hexo + GitHub 搭建博客\flow.png" alt="low"></p>
+        <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p><img src="flow.png" alt="low"></p>
 <h2 id="产品介绍"><a href="#产品介绍" class="headerlink" title="产品介绍"></a>产品介绍</h2><ol>
 <li>WordPress<ul>
 <li>PHP语言开发的博客平台，用户可以在支持PHP和MYSQL数据库的服务器上架设博客平台</li>
@@ -121,12 +128,12 @@
 </ol>
 <ul>
 <li><p>创建 仓库，名字为 <username>.github.io</username></p>
-<p><img src="用 Hexo + GitHub 搭建博客\public.png" alt="public"></p>
+<p><img src="public.png" alt="public"></p>
 </li>
 <li><p>更换域名<br>如何申请域名，见下面章节</p>
 <p>点击仓库的settings,选择GitHub Pages 的 Custom domain 输入指定的域名,保存</p>
-<p><img src="用 Hexo + GitHub 搭建博客\settings.png" alt="settings"></p>
-<p><img src="用 Hexo + GitHub 搭建博客\github domain.png" alt="github domain"></p>
+<p><img src="settings.png" alt="settings"></p>
+<p><img src="github domain.png" alt="github domain"></p>
 <p>实际效果是 仓库里面的有个CNAME文件,里面内容如下</p>
 <blockquote>
 <p>myblog.org</p>
@@ -186,11 +193,11 @@ hexo d         //hexo deploy,部署到网站,将本地blog部署到github的仓�
 <pre><code>hexo g -d  /  hexo d -g
 </code></pre><p>查看效果，在浏览器输入：<code>&lt;username&gt;.github.io</code> username是你github用户名</p>
 <blockquote>
-<p>注意：用cmd的<code>hexo d</code> 的时候报权限拒绝，网上有说可能是git版本问题，换成1.9的版本即可解决，我直接在<code>git bash</code>中执行<code>hexo d</code>可以部署到github上</p>
-<h2 id="6-其他技巧"><a href="#6-其他技巧" class="headerlink" title="6. 其他技巧"></a>6. 其他技巧</h2></blockquote>
+<p>注意：用cmd的<code>hexo d</code> 的时候报权限拒绝，网上有说可能是git版本问题，换成1.9的版本即可解决，我直接在<code>git bash</code>中执行<code>hexo d</code>可以部署到github上<br>也可以吧 <code>MyBlog\public</code> 中文件 替换 <code>xrcx.github.io</code> git 里面内容，直接用git 提交</p>
+</blockquote>
 </li>
 </ul>
-<h3 id="6-1指令"><a href="#6-1指令" class="headerlink" title="6.1指令"></a>6.1指令</h3><ul>
+<h2 id="6-其他技巧"><a href="#6-其他技巧" class="headerlink" title="6. 其他技巧"></a>6. 其他技巧</h2><h3 id="6-1指令"><a href="#6-1指令" class="headerlink" title="6.1指令"></a>6.1指令</h3><ul>
 <li>hexo clean,清缓存</li>
 <li>hexo new ‘postName’,新建文章,eg :添加 about 页面</li>
 <li>hexo new page ‘pageName’, 新建页面</li>
@@ -229,7 +236,7 @@ hexo d         //hexo deploy,部署到网站,将本地blog部署到github的仓�
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/30/用 Hexo + GitHub 搭建博客/" data-id="cj4lfp3zo0000a0jkt0wnc10n" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/04/30/用 Hexo + GitHub 搭建博客/" data-id="cj4lh6s290000qwjkthej81xv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -246,7 +253,7 @@ hexo d         //hexo deploy,部署到网站,将本地blog部署到github的仓�
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Catégories</h3>
+    <h3 class="widget-title">分类</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li></ul>
     </div>
@@ -261,9 +268,9 @@ hexo d         //hexo deploy,部署到网站,将本地blog部署到github的仓�
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">四月 2017</a></li></ul>
     </div>
   </div>
 
@@ -271,7 +278,7 @@ hexo d         //hexo deploy,部署到网站,将本地blog部署到github的仓�
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
         
@@ -291,8 +298,8 @@ hexo d         //hexo deploy,部署到网站,将本地blog部署到github的仓�
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2017 John Doe<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      &copy; 2017 xrcx<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
