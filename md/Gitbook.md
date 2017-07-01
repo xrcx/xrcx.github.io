@@ -1,9 +1,11 @@
 ---
 title: Gitbook
-date: 2017-07-01 20:41:34
 categories: 工具
-tags:gitbook
+toc: true 
+theme: next
+date: 2017-07-01 20:41:34
 ---
+
 
 ### 概述
 一个非常好的本地，在线文库制作的工具，可用输出文档，积累开发经验，完成调研任务的记录等。

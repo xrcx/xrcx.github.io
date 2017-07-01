@@ -1,3 +1,11 @@
+---
+title: Rxjava(待整理)
+categories: 技术
+toc: true 
+theme: next
+date: 2017-07-01 23:00:00
+---
+
 [ RxJava中的Single操作符与Subjects](http://blog.csdn.net/wbwjx/article/details/51265266)
 
 [探索专为 Android 而设计的 RxJava 2](https://my.oschina.net/bv10000/blog/809176)
@@ -171,8 +179,3 @@ doOnNext 允许我们在每次输出一个元素之前做一些额外的事情�
 	        return true;
 	    }
 	}
-
-
-
-
-

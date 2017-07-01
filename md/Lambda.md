@@ -1,6 +1,12 @@
+---
+title: Lambda(待整理)
+categories: 技术
+toc: true 
+theme: next
+date: 2017-05-30 23:00:00
+---
+
 - @FunctionalInterface 是 Java 8 新加入的一种接口，用于指明该接口类型声明是根据 Java 语言规范定义的函数式接口
-
-
 
 ### forEach ###
 	//New way:

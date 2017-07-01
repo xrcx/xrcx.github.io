@@ -1,8 +1,9 @@
 ---
 title: Markdown
-date: 2017-07-01 21:12:00
 categories: 工具
-tags:markdown
+toc: true 
+theme: next
+date: 2017-07-01 21:12:00
 ---
 
 # Markdown 使用说明 #

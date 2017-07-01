@@ -1,3 +1,11 @@
+---
+title: DataBinding(待整理)
+categories: 技术
+toc: true 
+theme: next
+date: 2017-05-30 23:00:00
+---
+
 # DataBinding #
 ## 绑定事件处理方法 ##
 [参考链接](http://blog.csdn.net/crazyman2010/article/details/53590007 "参考链接")

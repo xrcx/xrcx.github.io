@@ -2,7 +2,7 @@
 title: 用 Hexo + GitHub 搭建博客
 categories: 工具
 toc: true 
-theme: nexte
+theme: next
 date: 2017-04-30 23:00:00
 ---
 
@@ -155,6 +155,3 @@ date: 2017-04-30 23:00:00
 3.[手把手教你使用Hexo + Github Pages搭建个人独立博客](https://linghucong.js.org/2016/04/15/2016-04-15-hexo-github-pages-blog/)
 4.[Next使用文档](http://theme-next.iissnan.com/getting-started.html)
 5.[Next 作者博文](http://notes.iissnan.com/)
-
-
-
