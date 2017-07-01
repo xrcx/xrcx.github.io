@@ -11,21 +11,21 @@ date: 2017-07-01 21:12:00
 
 ### (一) 标题
 
-![标题](Markdown\标题.png)
+![标题](MarkDown\标题.png)
 
 ### (二) 列表 
 
-![排列](Markdown\排列.png)
+![排列](MarkDown\排列.png)
 
 ### (三) 引用 #
 
-![区块引用](Markdown\区块引用.png)
+![区块引用](MarkDown\区块引用.png)
 
-![区块引用2](Markdown\区块引用2.png)
+![区块引用2](MarkDown\区块引用2.png)
 
 ### (四) 代码
 
-![代码](Markdown\代码.png)
+![代码](MarkDown\代码.png)
 
 ### (五) 图片/链接 
 #### 1. 图片
@@ -33,7 +33,7 @@ date: 2017-07-01 21:12:00
 * `![Alt text][id]`,[id]是图片参考的名称
 * 地址可以本地，也可以网络(http://i.imgur.com/WZ7Ohkp.jpg)，云床 (https://www.getcloudapp.com/)
 
-![大白](Markdown/大白.jpg)
+![大白](MarkDown/大白.jpg)
 
 
 #### 2. 链接
@@ -65,15 +65,15 @@ date: 2017-07-01 21:12:00
 
 ### (六) 文本格式
 
-![文本格式](Markdown/文本格式.png)
+![文本格式](MarkDown/文本格式.png)
 
 ### (七) 表格 
 
-![表格](Markdown/表格.png)
+![表格](MarkDown/表格.png)
 
 ### (八) 分割线
 
-![分割线](Markdown\分割线.png)
+![分割线](MarkDown\分割线.png)
 
 ### (九) 目录 
 
@@ -82,10 +82,10 @@ date: 2017-07-01 21:12:00
 ### (十) 反义字符 -转义
 - Markdown 可以利用反斜杠来插入一些在语法中有其它意义的符号。
 
-![反斜杠](Markdown\反斜杠.png)
+![反斜杠](MarkDown\反斜杠.png)
 
 ### (十一) 任务 
 
-![任务](Markdown\任务列表.png)
+![任务](MarkDown\任务列表.png)
 
 <span id="jump">附录</span>

@@ -7,7 +7,7 @@ date: 2017-04-30 23:00:00
 ---
 
 # 概述
-![low](用 Hexo + GitHub 搭建博客\flow.png)
+![fow](用 Hexo + GitHub 搭建博客\flow.png)
 
 ## 产品介绍
 1. WordPress
@@ -83,11 +83,14 @@ date: 2017-04-30 23:00:00
     `git clone https://github.com/iissnan/hexo-theme-next themes/next`
     将下载的主题放到 themes 文件夹下,修改配置文件
     > theme: next
-
+- `next` 文件夹下 `config.yml` 修改如下
+> 选主题 `scheme: Mist`
 -   部署信息
-    >  type: git
-    >  repo: git@github.com:xrcx/xrcx.github.io.git
-    >  branch: master
+  > deploy:
+  >   type: git
+  >   repo: git@github.com:xrcx/xrcx.github.io.git
+  >   branch: master
+- `post_asset_folder:true`
 
 ## 4. 部署
 - **本地部署，启用本地服务器查看(退出 ctrl+c)**
@@ -109,7 +112,11 @@ date: 2017-04-30 23:00:00
   	hexo g -d  /  hexo d -g
   查看效果，在浏览器输入：`<username>.github.io` username是你github用户名
   >注意：用cmd的`hexo d` 的时候报权限拒绝，网上有说可能是git版本问题，换成1.9的版本即可解决，我直接在`git bash`中执行`hexo d`可以部署到github上
-## 6. 其他技巧
+
+## 6. 其他问题
+1. 如果首页乱码，`_config.yml` 这个保存 `utf-8` 格式保存.
+2. 图片出不来，在 `_config.yml` 要设置 `post_asset_folder: true`,
+npm install https://github.com/CodeFalling/hexo-asset-image --save
 
 ### 6.1指令
 
