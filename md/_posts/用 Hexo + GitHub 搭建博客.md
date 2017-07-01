@@ -69,7 +69,7 @@ date: 2017-04-30 23:00:00
 
 ## 3. 配置博客(_config.yml)
 注意冒号后面是带空格的
--   标题等基本信息
+- 标题等基本信息
     >参数      		描述
     >title			网站标题
     >subtitle		网站副标题
@@ -78,20 +78,38 @@ date: 2017-04-30 23:00:00
     >language	网站使用的语言
     >timezone	网站时区。Hexo 默认使用您电脑的时区。时区列表。比如说：America/New_York, Japan, 和 UTC 
 
--   主题信息
+- 主题信息
     下载主题
     `git clone https://github.com/iissnan/hexo-theme-next themes/next`
+
     将下载的主题放到 themes 文件夹下,修改配置文件
     > theme: next
+    
 - `next` 文件夹下 `config.yml` 修改如下
 > 选主题 `scheme: Mist`
--   部署信息
+
+- 部署信息
   > deploy:
   >   type: git
   >   repo: git@github.com:xrcx/xrcx.github.io.git
   >   branch: master
+  
 - `post_asset_folder:true`
 
+### 菜单设置
+1. 修改 `next` 主题下的 `_config.yml`的`menu`字段
+其中，home代表主页，categories代表分类页，about代表关于页面，archives代表归档页，commonweal代表404页面（page not found时候显示的页面）。
+2. 输入命令
+```
+  hexo new page about
+  //结果 source\about\index.md
+```
+
+3. 如果是`categories` 菜单
+
+  + hexo new page categories
+  + categories的 index.md 页面中添加 `type: "categories"`,就会自动分类
+  
 ## 4. 部署
 - **本地部署，启用本地服务器查看(退出 ctrl+c)**
   	hexo clean
@@ -114,33 +132,34 @@ date: 2017-04-30 23:00:00
   >注意：用cmd的`hexo d` 的时候报权限拒绝，网上有说可能是git版本问题，换成1.9的版本即可解决，我直接在`git bash`中执行`hexo d`可以部署到github上
 
 ## 6. 其他问题
-1. 如果首页乱码，`_config.yml` 这个保存 `utf-8` 格式保存.
-2. 图片出不来，在 `_config.yml` 要设置 `post_asset_folder: true`,
-npm install https://github.com/CodeFalling/hexo-asset-image --save
+### 6.1 如果首页乱码
 
-### 6.1指令
+`_config.yml` 这个保存 `utf-8` 格式保存.并且设置 `language: zh-Hans`
 
-- hexo clean,清缓存
-- hexo new 'postName',新建文章,eg :添加 about 页面
-- hexo new page 'pageName', 新建页面
-- hexo generate , 生成静态页面到 public 目录
-- hexo server , 开启预览访问端口（默认：4000，`ctrl+c` 关闭 server）
-- hexo deploy , 将 .deploy 目录部署到服务器
-
-### 6.2上传readme.md
-- 在本地写好的 README.mdown 文件复制到 source 文件夹中，再去执行hexo deploy
-- 在本地写好的 README.md 文件复制到 source 文件夹中，修改Hexo目录下的_config.yml。将skip_render参数的值设置上。skip_render: README.md，再去执行hexo deploy
-### 6.3使用图片
+### 6.2 使用图片
 1. 插件
 - 安装插件
   npm install https://github.com/CodeFalling/hexo-asset-image --save
 - 修改_config.yml
-  post_asset_folder: true
+  `post_asset_folder: true`
 - /source/_posts下创建和md文件同名的目录，在里面放该md需要的图片
 - 插入图片
   `![](目录名/文件名.png)`
 2. 放在根目录
    图片放在 source/img 下，然后在 markdown 里写 `![img](/source/img/img.png)` 。显然这样在本地的编辑器里完全不能正确识别图片的位置。
+
+### 6.3 指令
+
+- hexo clean,清缓存
+- hexo new 'postName',新建文章
+- hexo new page 'pageName', 新建页面,eg :添加 about 页面
+- hexo generate , 生成静态页面到 public 目录
+- hexo server , 开启预览访问端口（默认：4000，`ctrl+c` 关闭 server）
+- hexo deploy , 将 .deploy 目录部署到服务器
+
+### 6.4 上传readme.md
+- 在本地写好的 README.mdown 文件复制到 source 文件夹中，再去执行hexo deploy
+- 在本地写好的 README.md 文件复制到 source 文件夹中，修改Hexo目录下的_config.yml。将skip_render参数的值设置上。skip_render: README.md，再去执行hexo deploy
 
 # 申请域名
 - 去[万宝](https://wanwang.aliyun.com/?spm=5176.8142029.388261.24.rP16I5)注册域名

@@ -7,10 +7,11 @@ title: 学无止境
 subtitle: 学无止境
 description: 做自己爱做的事，爱自己在做的事！贵在坚持~
 author: xrcx
+language: zh-Hans
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: https://xrcx.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
