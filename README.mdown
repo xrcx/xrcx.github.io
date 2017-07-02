@@ -2,9 +2,8 @@
 
 1. md写在`xrcx.github.io\md\source` 下
 2. 将`xrcx.github.io\md\source` 拷贝到 `MyBlog\source`
-3. cmd 到该目录,用hexo 生成静态页面 `hexo g`,`hexo d`
-4. 将 `\MyBlog\public` 下文件拷贝到 `xrcx.github.io`目录下
-5. smartgit 提交
+3. cmd 到该目录,用hexo 生成静态页面 `hexo g`
+4. 部署用smartgit，将 `\MyBlog\public` 下文件拷贝到 `xrcx.github.io`目录下，然后用 smartgit 提交
 
 
 
