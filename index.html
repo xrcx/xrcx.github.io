@@ -276,6 +276,483 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://xrcx.github.io/2017/07/02/Android Studio/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xrcx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学无止境">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/02/Android Studio/" itemprop="url">Android Studio</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-02T15:41:34+08:00">
+                2017-07-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>官网：<a href="https://developer.android.google.cn/studio/index.html" target="_blank" rel="external">https://developer.android.google.cn/studio/index.html</a><br>要科学上网<br><a href="https://pan.baidu.com/s/1nuABMDb" target="_blank" rel="external">https://pan.baidu.com/s/1nuABMDb</a><br>安装过程也很简单，一直点击 Next，其中选择安全组件的时候建议全部勾上</p>
+<ol>
+<li>Tip of the Day 值得关注</li>
+<li>IntelliJ IDEA 的官网 https:www.jetbrains.com/idea/whatsnew ,可以找到很多实用 IDEA 新功能</li>
+</ol>
+<h2 id="小技巧"><a href="#小技巧" class="headerlink" title="小技巧"></a>小技巧</h2><ol>
+<li>进入演示模式，View菜单下面 <code>enter Presetation Mode</code>等模式</li>
+<li>按照驼峰移动光标，Settings -&gt; Editor -&gt; Smart Keys -&gt; <code>Use CamelHumps words</code>，用<code>Ctrl + Left/Right</code>来进行光标移动</li>
+<li>鼠标放上去可以看到文档提示，Settings -&gt; Editor -&gt; Show quick documention on mouse move, 根据需要自行定义</li>
+<li>多光标编辑，’Alt + Shift + 鼠标单击’，增加新光标</li>
+</ol>
+<h2 id="断点"><a href="#断点" class="headerlink" title="断点"></a>断点</h2><ol>
+<li>断点加条件，Enable 停用/启动断点<ul>
+<li>右键单击断点</li>
+<li>在 Condition 中写下断点条件</li>
+</ul>
+</li>
+<li>临时断点，<code>Ctrl + Shift + Alt + F8</code></li>
+<li>异常断点，<ul>
+<li>打开 <code>Run-View breakpoints</code> 界面</li>
+<li>左上角 <code>+</code> ,选择<code>Java Exception Breakpoints</code></li>
+<li>输入要监听的异常</li>
+</ul>
+</li>
+<li>日志断点，不用重新编译，会在断点处输出你需要的日志信息<ul>
+<li>在需要的地方打断点，右键单击断点</li>
+<li>suspend 为 False</li>
+<li>Log evaluated expression 中写入日志信息</li>
+</ul>
+</li>
+</ol>
+<h2 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h2><ol>
+<li>双击<code>shift</code>，Search Everywhere，快速查找</li>
+<li><code>Ctrl + Shift + A</code> ，Search Action，操作入口</li>
+<li><code>Ctrl + E</code>，Recent Files，最近的浏览过的文件</li>
+<li><code>Ctrl + Shift + E</code>，Recent Edited Files，最近修改的文件</li>
+<li><code>Ctrl + Tab</code>，Switcher，文件界面切换</li>
+<li><code>Ctrl + Alt + Left/Right</code>，代码返回，操作记录</li>
+<li><code>Shift + Alt + Left/Right</code>，整行移动</li>
+<li><code>Alt + F7</code>，Find Uages，查找方法调用</li>
+<li><code>Ctrl + B</code>，进入方法</li>
+<li><code>Ctrl + P</code>，查看方法参数定义与文档</li>
+<li><code>Ctrl + Shift + Up/Down</code>，快速行移动</li>
+<li><code>Ctrl + X</code>，删除</li>
+<li><code>Ctrl + D</code>，复制行</li>
+<li><code>Ctrl + Shift + Enter</code>，快速完成</li>
+<li><code>Ctrl + space</code>，代码提示，<code>Ctrl + Shift + space</code>，更加智能<ul>
+<li>Tab 键补全提示，会把后面已输入内容覆盖</li>
+<li>Enter 补全提示，不会覆盖后面内容</li>
+</ul>
+</li>
+<li>``，</li>
+<li>``，</li>
+<li>``，</li>
+<li>``，</li>
+<li>``，</li>
+<li>``，</li>
+<li>``，</li>
+<li>``，</li>
+<li>``，</li>
+<li>``，</li>
+<li>``，</li>
+<li>``，</li>
+<li><p>``，</p>
+</li>
+<li><p>代码提示  ctrl+alt+space<br>代码格式化   ctrl+alt+l<br>选中代码  ctrl+w<br>代码向上/下移动   ctrl+shift+up/down<br>复制到下一行  ctrl+d<br>剪切 ctrl+x<br>删除 ctrl+y<br>类中的方法间移动   alt+up/down<br>查找一个文件  ctrl+shift+n<br>查找类  ctrl+n<br>查找方法 ctrl+shift+alt+n<br>查找类中方法  ctrl+F12<br>查看方法的调用  ctrl+alt+h<br>查看方法实现 ctrl+shift+i  </p>
+</li>
+</ol>
+<p>查看父类 ctrl+u<br>复写父类方法 ctrl+o<br>显示类结构图 ctrl+h<br>查看变量声明 ctrl+b</p>
+<p>代码返回  ctrl+alt+left<br>窗口返回 alt+left<br>代码折叠展开  ctrl+plus<br>隐藏工程面板 alt+1<br>跳到大括号开头结尾  ctrl+[/]<br>选择代码，快速添加if，for  ctrl+alt+t<br>代码生成 ctrl+j<br>替换   ctrl+r<br>查找  ctrl+f<br>打开最近文件  ctrl+e<br>单步调试 f8<br>进入方法 f7<br>调到下一个断点 shift+f8</p>
+<p>====》 107 代码提示</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://xrcx.github.io/2017/07/02/Git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xrcx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学无止境">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/02/Git/" itemprop="url">Git</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-02T09:19:32+08:00">
+                2017-07-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工具/" itemprop="url" rel="index">
+                    <span itemprop="name">工具</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Git"><a href="#Git" class="headerlink" title="Git"></a><a href="https://git-for-windows.github.io/" target="_blank" rel="external">Git</a></h1><h2 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h2><h3 id="资料"><a href="#资料" class="headerlink" title="资料"></a>资料</h3><ol>
+<li><a href="http://git0scm.com/book/zh/v1/" target="_blank" rel="external">Git 权威指南（中文版）</a>，最权威的指南</li>
+<li><a href="htp://gitbook.liiuhui998.com/" target="_blank" rel="external">Git Community Book(中文版)</a></li>
+<li><a href="https://git.wiki.kernel.or/index.php/Main_page/" target="_blank" rel="external">WiKi 的 Git 主页</a>,深入研究时再去翻阅</li>
+<li><a href="http://marklodoto.github.io/visual-git-guide/index-zh-cn.html" target="_blank" rel="external">图解 Git 最好的网站</a></li>
+</ol>
+<h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><ol>
+<li><a href="https://www.shortcutfoo.com/app/dojos/git" target="_blank" rel="external">Git dojo</a>,一个练习<a href="https://www.shortcutfoo.com/" target="_blank" rel="external">快捷键网站</a>的子项目</li>
+<li><a href="https://try.github.io/levels/1/challenges/1" target="_blank" rel="external">15分钟练习 Git</a></li>
+<li>LernGitBranching</li>
+</ol>
+<h2 id="区域"><a href="#区域" class="headerlink" title="区域"></a>区域</h2><ol>
+<li>工作区，开发者修改代码区域，working tree</li>
+<li>暂存区，保存各个版本的区域，git add/commit 到暂存区</li>
+<li>历史区，index</li>
+</ol>
+<h2 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h2><ol>
+<li>项目的配置信息, <code>.git/config</code></li>
+</ol>
+<h2 id="SSH-Key"><a href="#SSH-Key" class="headerlink" title="SSH Key"></a>SSH Key</h2><ol>
+<li>创建 SSH KEY,<code>ssh-keyygen -t rsa -C &quot;xrcx@163.com&quot;</code>,会生成 id_rsa , id_rsa.pub文件，SSH Key 的密钥对。<ul>
+<li>id_rsa , 私钥, 验证自己身份。</li>
+<li>id_rsa.pub , 公钥, 用在git远程服务器上表明自己身份。</li>
+</ul>
+</li>
+<li>将 id_rsa.pub 内容复制到 Github 服务器 SSH Keys。</li>
+</ol>
+<h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><ol>
+<li>查看版本,<code>git --version</code></li>
+<li>当前 git 配置信息, <code>git config --list</code><br> <img src="/2017/07/02/Git/config.png" alt="config"></li>
+<li>显示通用配置信息, <code>git config --list --global</code></li>
+<li>显示指定配置名的配置信息, <code>git config user.name</code></li>
+<li>配置参数名, <code>git config --global user.name xrcx</code>,<pre><code>`git config --global --add user.name xrcx user.email xrcx@163.com`
+</code></pre></li>
+<li>删除配置信息, <code>git config --global --unset user.name xrcx</code></li>
+<li>显示项目的所有文件, <code>ll -a</code><br> <img src="/2017/07/02/Git/显示文件.png" alt="显示文件"></li>
+<li>配置别名, <code>git config --global alias.st status</code><br>eg: <code>git config --global alias.lg &quot;log --color --graph --pretty=format:&#39;%Cred%h%Creset-%C(yellow)%d%Creset%s%Cgreen(%cr)%C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit&quot;</code><br> <img src="/2017/07/02/Git/git_log1.png" alt="git_log1"><br> <img src="/2017/07/02/Git/git_log2.png" alt="git_log2"></li>
+<li>删除文件，<code>git rm fileName</code>,省去 git add 操作</li>
+</ol>
+<h2 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h2><ol>
+<li><code>git shortlog</code>, 查看并统计提交记录</li>
+<li><code>git log</code>，查看日志,详细提交信息，不包括追加提交，撤销记录等</li>
+<li><code>git lg</code></li>
+<li><code>git reflog</code>，查看所有提交记录</li>
+</ol>
+<h2 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h2><ol>
+<li>创建仓库, <code>git init</code></li>
+<li>克隆项目, <code>git clone git@github.com:xuxuxu/testGit.git</code> </li>
+</ol>
+<ul>
+<li>SSH 协议，通过对称加密秘钥来验证</li>
+<li>Https方式，要检验用户名和密码</li>
+</ul>
+<h2 id="提交修改"><a href="#提交修改" class="headerlink" title="提交修改"></a>提交修改</h2><ol>
+<li>查看仓库状态, git status</li>
+<li>创建文件, <code>touch fileName</code>，状态 <code>Untracked</code></li>
+<li>添加版本控制, <code>git add fileName</code>, 状态 <code>Added</code> ，<code>Stage</code></li>
+<li>提交, <code>git commit -m &#39;add file&#39;</code>,</li>
+<li>追加修改, <code>git commit --amend -m &quot;add test2&quot;</code>,可通过修改commit，纠正前一个错误的commit<ul>
+<li><code>git diff fileName</code> ,比较指定文件差异</li>
+<li><code>git diff HEAD</code>，比较提交节点差异</li>
+</ul>
+</li>
+<li>指定文件历史修改记录，<code>git blame fileName</code></li>
+</ol>
+<h2 id="回退-check-out-amp-amp-reset"><a href="#回退-check-out-amp-amp-reset" class="headerlink" title="回退 check out &amp;&amp; reset"></a>回退 check out &amp;&amp; reset</h2><ol>
+<li><code>git checkout fileName</code><ul>
+<li>git add 前，撤销本地修改，到最后 commit 的状态</li>
+<li>git add 后, 撤掉到最后 add 的状态</li>
+</ul>
+</li>
+<li><code>git reset --hare HEAD^</code>,回到上个提交版本</li>
+</ol>
+<h2 id="暂存-stash"><a href="#暂存-stash" class="headerlink" title="暂存 stash"></a>暂存 stash</h2><ol>
+<li>文件暂存，<code>git stash</code></li>
+<li>查看当前暂存内容，<code>git stash list</code></li>
+<li>恢复暂存内容，<code>git stash apply stash@{0}</code>,<code>git stash pop</code></li>
+</ol>
+<h2 id="pull-amp-amp-push"><a href="#pull-amp-amp-push" class="headerlink" title="pull &amp;&amp; push"></a>pull &amp;&amp; push</h2><ol>
+<li>将本地代码添加到远程仓库, <code>git remote add origin url</code> ,其中 <code>origin</code> 是远程仓库的名字</li>
+<li>将修改推动到远程仓库，<code>git push -u origin master</code>(第一次)或者 <code>git push</code>，其中 -u 参数，还会把本地和远程 master 分支关联起来。</li>
+<li>推送分支，<code>git push origin dev</code>，把dev分支推送到远程origin仓库中</li>
+<li>推送 Tag，<ul>
+<li><code>git push origin version1</code></li>
+<li><code>git push origin --tags</code>,推送所有的本地 Tag </li>
+<li><code>git push origin :refs/tags/version0</code> ,删除本地 Tag后推送到服务器</li>
+</ul>
+</li>
+<li>避免多余 Merge History，<code>git pull --rebase</code> 不用 <code>git pull</code> </li>
+</ol>
+<h1 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h1><ol>
+<li>master 分支，进行发布管理，用于打 Tag 和发布 release,保证发布出去的版本一定是完善的,已验证过的。</li>
+<li>develop 分支，进行开发</li>
+</ol>
+<h2 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h2><ol>
+<li><p>创建分支，<code>git checkout -b dev</code></p>
+<ul>
+<li>-b 参数，使分支创建并自动切换</li>
+<li>dev 是分支名称</li>
+<li><p>等价 </p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git branch dev</div><div class="line">git checkout dev</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>如果分支中有未提交的修改，先用<code>git stash</code> 暂存内容，再切换分支</strong></p>
+</li>
+</ul>
+</li>
+<li>查看分支，<code>git branch</code><ul>
+<li>-r，可列出所有远程分支</li>
+<li>-a，列举出所有本地和远程分支</li>
+</ul>
+</li>
+<li>查看远程分支，<code>got remote</code>,查看详细信息，<code>git remote -v</code></li>
+<li>3.合并分支，比如，要把 dev 分支合并到 master，在 master 分支上 merge 代码，<code>git merge dev</code><ul>
+<li>merge，操作后，时间线不会合并，保存了完整的git提交记录</li>
+<li>rebase，操作后git时间线会被进行合并，让时间线更干净</li>
+</ul>
+</li>
+<li>删除分支，<code>git branch -d dev</code>，就算没合并也要删除，强制删除，<code>git branch -D dev</code></li>
+</ol>
+<h1 id="Tag"><a href="#Tag" class="headerlink" title="Tag"></a>Tag</h1><p>类似branch，不可以改变，Merge，用于记录某个 commit点或分支的历史快照。通常打在Master分支上，以保证代码的准确性。</p>
+<h2 id="操作-1"><a href="#操作-1" class="headerlink" title="操作"></a>操作</h2><ol>
+<li>创建 Tag<ul>
+<li><code>git tag version1</code></li>
+<li><code>git tag version0 b687b098</code>，指定ID</li>
+<li><code>git tag -a V1 -m &quot;version1&quot; b78997a09e80c9b807d87</code>，创建带标签的 Tag，<code>-a</code> 指定 Tag 名，<code>-m</code>，指定注释文字</li>
+</ul>
+</li>
+<li>查看 Tag</li>
+</ol>
+<ul>
+<li><code>git tag</code></li>
+<li><code>git show tagName</code>，查看指定 Tag 的详细信息</li>
+</ul>
+<ol>
+<li>删除 Tag，</li>
+</ol>
+<ul>
+<li><code>git tag -d version0</code>，删除本地 Tag</li>
+<li>删除远程 Tag，先删除本地 Tag，在Push 到远程仓库 <code>git push origin :refs/tags/version0</code></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://xrcx.github.io/2017/07/01/Rx学习/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -824,8 +1301,10 @@ observable.subscribe(subscriber);
 </ul>
 </li>
 <li>Slides(<a href="https://slides.com/)在线PPT制作工具" target="_blank" rel="external">https://slides.com/)在线PPT制作工具</a></li>
-<li><a href="https://community.nodebb.org/" target="_blank" rel="external">NodeBB</a>,搭建论坛平台框架<ul>
-<li>基于 Nods.js </li>
+<li><a href="https://community.nodebb.org/" target="_blank" rel="external">NodeBB</a>,搭建论坛框架<ul>
+<li>基于 Nods.js<br>6.项目文档生成器</li>
+<li><a href="http://www.mkdocs.org" target="_blank" rel="external">MkDocs</a>,markdown 项目文档工具</li>
+<li><a href="http://raneto.com/" target="_blank" rel="external">Raneto Docs</a>,利用 markdown 进行文档管理系统</li>
 </ul>
 </li>
 </ol>
@@ -1881,7 +2360,7 @@ hexo d         //hexo deploy,部署到网站,将本地blog部署到github的仓�
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">10</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1898,6 +2377,15 @@ hexo d         //hexo deploy,部署到网站,将本地blog部署到github的仓�
             </div>
           
 
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
           
 
         </nav>
