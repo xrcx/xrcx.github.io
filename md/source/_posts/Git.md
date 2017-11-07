@@ -76,7 +76,7 @@ tags: git,版本控制
 1. `git checkout fileName`
     + git add 前，撤销本地修改，到最后 commit 的状态
     + git add 后, 撤掉到最后 add 的状态
-2. `git reset --hare HEAD^`,回到上个提交版本
+2. `git reset --hard HEAD^`,回到上个提交版本
 
 ## 暂存 stash
 2. 文件暂存，`git stash`
