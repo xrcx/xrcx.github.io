@@ -1,0 +1,829 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="PowerMock GitHub 官网  为什么要使用PowerMock现如今比较流行的Mock工具如 jMock 、EasyMock 、Mockito等都有一个共同的缺点：不能mock静态、final、私有方法等。而PowerMock能够完美的弥补以上三个Mock工具的不足。 PowerMock简介PowerMock 也是一个单元测试模拟框架，它是在其它单元测试模拟框架的基础上做出的扩展。通过提">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学无止境">
+<meta property="og:url" content="https://xrcx.github.io/2017/11/07/Powermockito/index.html">
+<meta property="og:site_name" content="学无止境">
+<meta property="og:description" content="PowerMock GitHub 官网  为什么要使用PowerMock现如今比较流行的Mock工具如 jMock 、EasyMock 、Mockito等都有一个共同的缺点：不能mock静态、final、私有方法等。而PowerMock能够完美的弥补以上三个Mock工具的不足。 PowerMock简介PowerMock 也是一个单元测试模拟框架，它是在其它单元测试模拟框架的基础上做出的扩展。通过提">
+<meta property="og:updated_time" content="2017-07-19T08:51:11.833Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学无止境">
+<meta name="twitter:description" content="PowerMock GitHub 官网  为什么要使用PowerMock现如今比较流行的Mock工具如 jMock 、EasyMock 、Mockito等都有一个共同的缺点：不能mock静态、final、私有方法等。而PowerMock能够完美的弥补以上三个Mock工具的不足。 PowerMock简介PowerMock 也是一个单元测试模拟框架，它是在其它单元测试模拟框架的基础上做出的扩展。通过提">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"right","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://xrcx.github.io/2017/11/07/Powermockito/"/>
+
+
+
+
+
+  <title> | 学无止境</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">学无止境</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">学无止境</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://xrcx.github.io/2017/11/07/Powermockito/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xrcx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学无止境">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-07T22:56:01+08:00">
+                2017-11-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="PowerMock"><a href="#PowerMock" class="headerlink" title="PowerMock"></a>PowerMock</h1><ul>
+<li><a href="https://github.com/powermock/powermock" target="_blank" rel="external">GitHub</a></li>
+<li><a href="http://powermock.github.io/" target="_blank" rel="external">官网</a></li>
+</ul>
+<h2 id="为什么要使用PowerMock"><a href="#为什么要使用PowerMock" class="headerlink" title="为什么要使用PowerMock"></a>为什么要使用PowerMock</h2><p>现如今比较流行的Mock工具如 jMock 、EasyMock 、Mockito等都有一个共同的缺点：不能mock静态、final、私有方法等。而PowerMock能够完美的弥补以上三个Mock工具的不足。</p>
+<h2 id="PowerMock简介"><a href="#PowerMock简介" class="headerlink" title="PowerMock简介"></a>PowerMock简介</h2><p>PowerMock 也是一个单元测试模拟框架，它是在其它单元测试模拟框架的基础上做出的扩展。通过提供定制的类加载器以及一些字节码篡改技巧的应用，PowerMock 现了对静态方法、构造方法、私有方法以及 Final 方法的模拟支持，对静态初始化过程的移除等强大的功能。因为 PowerMock 在扩展功能时完全采用和被扩展的框架相同的 API, 熟悉 PowerMock 所支持的模拟框架的开发者会发现 PowerMock 非常容易上手。PowerMock 的目的就是在当前已经被大家所熟悉的接口上通过添加极少的方法和注释来实现额外的功能。</p>
+<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">    testCompile <span class="string">'junit:junit:4.12'</span></div><div class="line">    <span class="comment">// PowerMock brings in the mockito dependency</span></div><div class="line">    testCompile <span class="string">'org.powermock:powermock-module-junit4:1.6.5'</span></div><div class="line">    testCompile <span class="string">'org.powermock:powermock-module-junit4-rule:1.6.5'</span></div><div class="line">    testCompile <span class="string">'org.powermock:powermock-api-mockito:1.6.5'</span></div><div class="line">    testCompile <span class="string">'org.powermock:powermock-classloading-xstream:1.6.5'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="注解："><a href="#注解：" class="headerlink" title="注解："></a>注解：</h3><ul>
+<li>@RunWith</li>
+<li>@PrepareForTest - 是声明需要进行mock的静态类</li>
+<li>@PowerMockIgnore - 声明package路径，表示不使用PowerMockito来加载所声明的package路径的类。</li>
+</ul>
+<blockquote>
+<p>注：如果你的测试用例里没有使用注解 <code>@PrepareForTest</code>，那么可以不用加注解 <code>@RunWith(PowerMockRunner.class)</code>，<br>反之亦然。当你需要使用PowerMock强大功能(Mock静态、final、私有方法等)的时候，就需要加注解 <code>@PrepareForTest</code>。</p>
+</blockquote>
+<p><strong>声明</strong></p>
+<ul>
+<li><p>使用注解方式</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@RunWith</span>(PowerMockRunner.class)</div><div class="line"><span class="meta">@PrepareForTest</span>(&#123;YourClassWithEgStaticMethod.class&#125;)</div></pre></td></tr></table></figure>
+</li>
+<li><p>注解和 Rule 的方式</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@PrepareForTest</span>(&#123;YourClassWithEgStaticMethod.class&#125;)</div><div class="line"></div><div class="line"><span class="meta">@Rule</span></div><div class="line"><span class="keyword">public</span> PowerMockRule rule = <span class="keyword">new</span> PowerMockRule();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>声明多个静态类</strong></p>
+<p><code>@PrepareForTest({Example1.class, Example2.class, ...})</code></p>
+<h2 id="基本用法预览"><a href="#基本用法预览" class="headerlink" title="基本用法预览"></a>基本用法预览</h2><ul>
+<li><p>PowerMockito.mock() </p>
+<ul>
+<li>创建 mock 对象  </li>
+<li><code>PowerMockito.mock(File.class);</code></li>
+</ul>
+</li>
+<li><p>PowerMockito.when().thenReturn() </p>
+<ul>
+<li>指定 mock 对象的某些方法的行为</li>
+<li><code>PowerMockito.when(file.exists()).thenReturn(true);</code></li>
+</ul>
+</li>
+<li><p>PowerMockito.whenNew().withArguments().thenReturn() </p>
+<ul>
+<li>模拟构造函数 </li>
+<li><code>PowerMockito.whenNew(File.class).withArguments(directoryPath).thenReturn(directoryMock);</code></li>
+</ul>
+</li>
+<li><p>PowerMockito.mockStatic(Utils.class)</p>
+<ul>
+<li>模拟静态</li>
+<li><code>PowerMockito.mockStatic(CommonExample.class);</code></li>
+</ul>
+</li>
+<li><p>PowerMockito.verifyNew().withArguments();</p>
+<ul>
+<li>验证指定构造函数是否被调用    </li>
+<li><code>PowerMockito.verifyNew(File.class).withArguments(directoryPath);</code>   </li>
+</ul>
+</li>
+<li><p>PowerMockito.verifyStatic();</p>
+<ul>
+<li>验证静态方法是否被调用</li>
+<li><code>PowerMockito.verifyStatic();</code></li>
+</ul>
+</li>
+<li><p>PowerMockito.verifyPrivate().invoke()</p>
+<ul>
+<li>验证私有方法是否被调用</li>
+<li><code>verifyPrivate(commonExample).invoke(&quot;isExist&quot;);</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="基本用法详解"><a href="#基本用法详解" class="headerlink" title="基本用法详解"></a>基本用法详解</h2><h3 id="1-普通Mock：Mock参数传递的对象"><a href="#1-普通Mock：Mock参数传递的对象" class="headerlink" title="1. 普通Mock：Mock参数传递的对象"></a>1. 普通Mock：Mock参数传递的对象</h3><blockquote>
+<p>普通Mock不需要加 <code>@RunWith</code> 和 <code>@PrepareForTest</code> 注解</p>
+</blockquote>
+<p>测试目标代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CommonExample</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">callArgumentInstance</span><span class="params">(File file)</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> file.exists();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>测试用例代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CommonExampleTest</span> </span>&#123;</div><div class="line">    <span class="meta">@Test</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testCallArgumentInstance</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="comment">// 创建出一个mock对象</span></div><div class="line">        File file = PowerMockito.mock(File.class);    </div><div class="line">        CommonExample commonExample = <span class="keyword">new</span> CommonExample();</div><div class="line">        <span class="comment">// 指定这个mock对象具体的行为</span></div><div class="line">        PowerMockito.when(file.exists()).thenReturn(<span class="keyword">true</span>);</div><div class="line">        <span class="comment">// 将mock对象作为参数传递个测试方法，执行测试方法</span></div><div class="line">        Assert.assertTrue(commonExample.callArgumentInstance(file));</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="2-模拟构造方法"><a href="#2-模拟构造方法" class="headerlink" title="2. 模拟构造方法"></a>2. 模拟构造方法</h3><blockquote>
+<p>需要添加注解</p>
+<ul>
+<li>@Rule</li>
+<li>@PrepareForTest ,里面的类是需要mock的new对象代码所在的类</li>
+</ul>
+<p>可以很好的模拟构造函数,从而使被测代码中 new 操作返回的对象可以被随意定制，会很大程度的提高单元测试的效率</p>
+</blockquote>
+<p>测试目标代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CommonExample</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">createDirectoryStructure</span><span class="params">(String directoryPath)</span> </span>&#123;</div><div class="line">        File directory = <span class="keyword">new</span> File(directoryPath);</div><div class="line">        <span class="keyword">if</span> (directory.exists()) &#123;</div><div class="line">            String msg = <span class="string">"\""</span> + directoryPath + <span class="string">"\" 已经存在."</span>;</div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(msg);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> directory.mkdirs();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>测试用例代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CommonExampleTest</span> </span>&#123;</div><div class="line">    <span class="meta">@Rule</span></div><div class="line">    <span class="keyword">public</span> PowerMockRule rule = <span class="keyword">new</span> PowerMockRule();</div><div class="line"></div><div class="line">    <span class="meta">@Test</span></div><div class="line">    <span class="meta">@PrepareForTest</span>(CommonExample.class)</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testMockConstructorMethod</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">        <span class="keyword">final</span> String directoryPath = <span class="string">"seemygod"</span>;</div><div class="line">        <span class="comment">//创建File的模拟对象</span></div><div class="line">        File directoryMock = PowerMockito.mock(File.class);</div><div class="line"></div><div class="line">        <span class="comment">//在当前测试用例下,当出现new File("seemygod")时,就返回模拟对象</span></div><div class="line">        PowerMockito.whenNew(File.class).withArguments(directoryPath).thenReturn(directoryMock);</div><div class="line"></div><div class="line">        <span class="comment">//当调用模拟对象的exists时,返回false</span></div><div class="line">        PowerMockito.when(directoryMock.exists()).thenReturn(<span class="keyword">false</span>);</div><div class="line">        <span class="comment">//当调用模拟对象的mkdirs时,返回true</span></div><div class="line">        PowerMockito.when(directoryMock.mkdirs()).thenReturn(<span class="keyword">true</span>);</div><div class="line">        Assert.assertTrue(<span class="keyword">new</span> CommonExample().createDirectoryStructure(directoryPath));</div><div class="line">        <span class="comment">//验证new File(directoryPath);  是否被调用过</span></div><div class="line">        PowerMockito.verifyNew(File.class).withArguments(directoryPath);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="3-Mock-final方法"><a href="#3-Mock-final方法" class="headerlink" title="3. Mock final方法"></a>3. Mock final方法</h3><blockquote>
+<p>需要添加注解</p>
+<ul>
+<li>@Rule</li>
+<li>@PrepareForTest(ClassDependency.class)，注解里写的类是需要mock的final方法所在的类</li>
+</ul>
+</blockquote>
+<p>测试目标代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CommonExample</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">boolean</span> <span class="title">callFinalMethod</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>测试用例代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CommonExampleTest</span> </span>&#123;</div><div class="line">    <span class="meta">@Rule</span></div><div class="line">    <span class="keyword">public</span> PowerMockRule rule = <span class="keyword">new</span> PowerMockRule();</div><div class="line"></div><div class="line">    <span class="meta">@Test</span></div><div class="line">    <span class="meta">@PrepareForTest</span>(CommonExample.class)</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testCallFinalMethod</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">        CommonExample commonExample = PowerMockito.mock(CommonExample.class);</div><div class="line">        PowerMockito.when(commonExample.callFinalMethod()).thenReturn(<span class="keyword">true</span>);</div><div class="line">        Assert.assertTrue(commonExample.callFinalMethod());</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="4-Mock-静态方法"><a href="#4-Mock-静态方法" class="headerlink" title="4. Mock 静态方法"></a>4. Mock 静态方法</h3><blockquote>
+<p>需要添加注解</p>
+<ul>
+<li>@Rule</li>
+<li>@PrepareForTest(ClassDependency.class)，注解里写的类是静态方法所在的类</li>
+</ul>
+</blockquote>
+<p>测试目标代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CommonExample</span> </span>&#123;</div><div class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title">callStaticMethod</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> UUID.randomUUID().toString();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>测试用例代码：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PowerMockSampleTest</span> </span>&#123;</div><div class="line">    <span class="meta">@Rule</span></div><div class="line">    <span class="keyword">public</span> PowerMockRule rule = <span class="keyword">new</span> PowerMockRule();</div><div class="line"></div><div class="line">    <span class="meta">@Test</span></div><div class="line">    <span class="meta">@PrepareForTest</span>(CommonExample.class)</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testCallStaticMethod</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">        PowerMockito.mockStatic(CommonExample.class);</div><div class="line">        PowerMockito.when(CommonExample.callStaticMethod()).thenReturn(<span class="string">"FAKE UUID"</span>);</div><div class="line">        Assert.assertEquals(<span class="string">"FAKE UUID"</span>, CommonExample.callStaticMethod());</div><div class="line">        <span class="comment">//验证静态方法是否被调用</span></div><div class="line">        PowerMockito.verifyStatic();</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="5-Mock-私有方法"><a href="#5-Mock-私有方法" class="headerlink" title="5.Mock 私有方法"></a>5.Mock 私有方法</h3><blockquote>
+<p>需要添加注解</p>
+<ul>
+<li>@Rule</li>
+<li>@PrepareForTest(ClassDependency.class)，注解里写的类是私有方法所在的类</li>
+</ul>
+</blockquote>
+<p>测试目标方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CommonExample</span> </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">callPrivateMethod</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> isExist();</div><div class="line">    &#125;</div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">isExist</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>测试用例代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PowerMockSampleTest</span> </span>&#123;</div><div class="line">    <span class="meta">@Rule</span></div><div class="line">    <span class="keyword">public</span> PowerMockRule rule = <span class="keyword">new</span> PowerMockRule();</div><div class="line"></div><div class="line">    <span class="meta">@Test</span></div><div class="line">    <span class="meta">@PrepareForTest</span>(CommonExample.class)</div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testCallPrivateMethod</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">        CommonExample commonExample = spy(<span class="keyword">new</span> CommonExample());</div><div class="line"></div><div class="line">        PowerMockito.when(commonExample.callPrivateMethod()).thenCallRealMethod();</div><div class="line">        PowerMockito.when(commonExample, <span class="string">"isExist"</span>).thenReturn(<span class="keyword">true</span>);</div><div class="line">        Assert.assertTrue(commonExample.callPrivateMethod());</div><div class="line">        verifyPrivate(commonExample).invoke(<span class="string">"isExist"</span>);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="6-Mock-私有变量"><a href="#6-Mock-私有变量" class="headerlink" title="6. Mock 私有变量"></a>6. Mock 私有变量</h3><blockquote>
+<p>不需要加注解@PrepareForTest和@RunWith，而是使用Whitebox来mock私有变量mState并注入你预设的变量值。</p>
+</blockquote>
+<p>测试目标方法：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CommonExample</span> </span>&#123;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> STATE_NOT_READY = <span class="number">0</span>;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> STATE_READY = <span class="number">1</span>;</div><div class="line">    <span class="keyword">private</span> <span class="keyword">int</span> mState = STATE_NOT_READY;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">doSomethingIfStateReady</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="keyword">if</span> (mState == STATE_READY) </div><div class="line">            <span class="keyword">return</span> <span class="keyword">true</span>;</div><div class="line">        <span class="keyword">else</span>  </div><div class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>测试用例代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PowerMockSampleTest</span> </span>&#123;</div><div class="line">    <span class="meta">@Rule</span></div><div class="line">    <span class="keyword">public</span> PowerMockRule rule = <span class="keyword">new</span> PowerMockRule();</div><div class="line"></div><div class="line">    <span class="meta">@Test</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testPrivateProperty</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">        CommonExample sample = <span class="keyword">new</span> CommonExample();</div><div class="line">        Whitebox.setInternalState(sample, <span class="string">"mState"</span>, <span class="number">1</span>);</div><div class="line">        Assert.assertTrue(sample.doSomethingIfStateReady());</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="PowerMock简单实现原理"><a href="#PowerMock简单实现原理" class="headerlink" title="PowerMock简单实现原理"></a>PowerMock简单实现原理</h2><ol>
+<li><p>当某个测试方法被注解 <code>@PrepareForTest</code> 标注以后，在运行测试用例时，会创建一个新的 <code>org.powermock.core.classloader.MockClassLoader</code> 实例，然后加载该测试用例使用到的类（系统类除外）。</p>
+</li>
+<li><p>PowerMock会根据你的mock要求，去修改写在注解 <code>@PrepareForTest</code> 里的class文件（当前测试类会自动加入注解中），以满足特殊的mock需求。例如：去除’final方法的final标识，在静态方法的最前面加入自己的虚拟实现等。</p>
+</li>
+<li><p>如果需要mock的是系统类的final方法和静态方法，PowerMock不会直接修改系统类的class文件，而是修改调用系统类的class文件，以满足mock需求。</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/07/NotePPT/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/11/07/Robolectric/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="xrcx" />
+          <p class="site-author-name" itemprop="name">xrcx</p>
+           
+              <p class="site-description motion-element" itemprop="description">做自己爱做的事，爱自己在做的事！贵在坚持~</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PowerMock"><span class="nav-number">1.</span> <span class="nav-text">PowerMock</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要使用PowerMock"><span class="nav-number">1.1.</span> <span class="nav-text">为什么要使用PowerMock</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PowerMock简介"><span class="nav-number">1.2.</span> <span class="nav-text">PowerMock简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#入门"><span class="nav-number">1.3.</span> <span class="nav-text">入门</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">1.3.1.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注解："><span class="nav-number">1.3.2.</span> <span class="nav-text">注解：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本用法预览"><span class="nav-number">1.4.</span> <span class="nav-text">基本用法预览</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本用法详解"><span class="nav-number">1.5.</span> <span class="nav-text">基本用法详解</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-普通Mock：Mock参数传递的对象"><span class="nav-number">1.5.1.</span> <span class="nav-text">1. 普通Mock：Mock参数传递的对象</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-模拟构造方法"><span class="nav-number">1.5.2.</span> <span class="nav-text">2. 模拟构造方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-Mock-final方法"><span class="nav-number">1.5.3.</span> <span class="nav-text">3. Mock final方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-Mock-静态方法"><span class="nav-number">1.5.4.</span> <span class="nav-text">4. Mock 静态方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-Mock-私有方法"><span class="nav-number">1.5.5.</span> <span class="nav-text">5.Mock 私有方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-Mock-私有变量"><span class="nav-number">1.5.6.</span> <span class="nav-text">6. Mock 私有变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PowerMock简单实现原理"><span class="nav-number">1.6.</span> <span class="nav-text">PowerMock简单实现原理</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">xrcx</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
