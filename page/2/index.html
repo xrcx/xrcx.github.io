@@ -276,6 +276,149 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://xrcx.github.io/2017/11/07/Android 单元测试/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xrcx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学无止境">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/11/07/Android 单元测试/" itemprop="url">未命名</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-07T22:56:01+08:00">
+                2017-11-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="本地单元测试"><a href="#本地单元测试" class="headerlink" title="本地单元测试"></a>本地单元测试</h2><ol>
+<li>配置<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">dependencies &#123;</div><div class="line">    testCompile <span class="string">'junit:junit:4.12'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>[slide] </p>
+<h2 id="Junit"><a href="#Junit" class="headerlink" title="Junit"></a>Junit</h2><h2 id="AndroidJUnitRunner"><a href="#AndroidJUnitRunner" class="headerlink" title="AndroidJUnitRunner"></a>AndroidJUnitRunner</h2><p>是JUnit测试运行器，可以在Android设备上执行JUnit3或JUnit4中风格的测试类，兼容Espresso和UI Automator测试框架。测试运行器加载测试包和应用，运行测试并报告测试结果。<br><a href="http://developer.android.com/tools/testing-support-library/index.html" target="_blank" rel="external">Android 测试支持库</a>一部分</p>
+<ol>
+<li>注解</li>
+</ol>
+<ul>
+<li>@RequiresDevice来指定该条测试只运行在物理设备，而不是模拟设备</li>
+<li>@SdkSupress(miniSdkVersion=18) 限制在指定的Android设备上运行</li>
+<li>@LargeTest @MediumTest @SmallTest 用于将测试用例按照重要程度进行分类，在进行测试的时候可以选择只运行某个类别的测试用例。<ul>
+<li>@SmallTest 标志该测试方法是小型测试的一部分</li>
+<li>@MediumTest 标志该测试方法是中等测试的一部分</li>
+<li>@LargeTest 标志该测试方法是大型测试的一部分</li>
+</ul>
+</li>
+</ul>
+<p>注意：Instrumented JUnit 4测试类在设备或仿真器上运行，必须在前面加上@RunWith(AndroidJUnit4.class)注释。</p>
+<p>[slide]</p>
+<ol>
+<li>访问instrumentation的API<br>InstrumentationRegistry.getInstrumentation() 返回当前正在运行的Instrumentation<br>InstrumentationRegistry.getContext() 返回此Instrumentation软件包的上下文。<br>InstrumentationRegistry.getTargetContext() 返回目标应用的应用上下文。<br>InstrumentationRegistry.getArguments() 返回传递给此Instrumentation的参数Bundle。当你要访问命令行参数时非常有用。 </li>
+</ol>
+<p>参考:<a href="http://www.cnblogs.com/JianXu/p/5175945.html" target="_blank" rel="external">http://www.cnblogs.com/JianXu/p/5175945.html</a></p>
+<p>[slide] </p>
+<h2 id="Mockito"><a href="#Mockito" class="headerlink" title="Mockito"></a>Mockito</h2><p>[slide] </p>
+<h2 id="Powermockito"><a href="#Powermockito" class="headerlink" title="Powermockito"></a>Powermockito</h2><p><a href="https://my.oschina.net/jackieyeah/blog/157076" target="_blank" rel="external">https://my.oschina.net/jackieyeah/blog/157076</a><br>[slide] </p>
+<h2 id="Robolectric"><a href="#Robolectric" class="headerlink" title="Robolectric"></a>Robolectric</h2><ul>
+<li>mockito invokeMock</li>
+<li></li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://xrcx.github.io/2017/07/27/Rxjava 学习笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1687,6 +1830,158 @@ observable.subscribe(subscriber);
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://xrcx.github.io/2017/05/30/Lambda/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xrcx">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="学无止境">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/05/30/Lambda/" itemprop="url">Lambda(待整理)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-30T23:00:00+08:00">
+                2017-05-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <ul>
+<li>@FunctionalInterface 是 Java 8 新加入的一种接口，用于指明该接口类型声明是根据 Java 语言规范定义的函数式接口</li>
+</ul>
+<h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h3><pre><code>//New way:
+List&lt;Integer&gt; list = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
+list.forEach(n -&gt; System.out.println(n));
+
+//or we can use :: double colon operator in Java 8
+list.forEach(System.out::println);
+</code></pre><h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><pre><code>//Old way:
+List&lt;Integer&gt; list = Arrays.asList(1,2,3,4,5,6,7);
+for(Integer n : list) {
+    int x = n * n;
+    System.out.println(x);
+}
+
+//New way:
+List&lt;Integer&gt; list = Arrays.asList(1,2,3,4,5,6,7);
+list.stream().map((x) -&gt; x*x).forEach(System.out::println);
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://xrcx.github.io/2017/05/30/DataBinding/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1906,448 +2201,6 @@ protected void onCreate(Bundle savedInstanceState) {
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://xrcx.github.io/2017/05/30/Lambda/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xrcx">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="学无止境">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/30/Lambda/" itemprop="url">Lambda(待整理)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-30T23:00:00+08:00">
-                2017-05-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ul>
-<li>@FunctionalInterface 是 Java 8 新加入的一种接口，用于指明该接口类型声明是根据 Java 语言规范定义的函数式接口</li>
-</ul>
-<h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h3><pre><code>//New way:
-List&lt;Integer&gt; list = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
-list.forEach(n -&gt; System.out.println(n));
-
-//or we can use :: double colon operator in Java 8
-list.forEach(System.out::println);
-</code></pre><h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><pre><code>//Old way:
-List&lt;Integer&gt; list = Arrays.asList(1,2,3,4,5,6,7);
-for(Integer n : list) {
-    int x = n * n;
-    System.out.println(x);
-}
-
-//New way:
-List&lt;Integer&gt; list = Arrays.asList(1,2,3,4,5,6,7);
-list.stream().map((x) -&gt; x*x).forEach(System.out::println);
-</code></pre>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://xrcx.github.io/2017/04/30/用 Hexo + GitHub 搭建博客/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xrcx">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="学无止境">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/04/30/用 Hexo + GitHub 搭建博客/" itemprop="url">用 Hexo + GitHub 搭建博客</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-30T23:00:00+08:00">
-                2017-04-30
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/工具/" itemprop="url" rel="index">
-                    <span itemprop="name">工具</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p><img src="/2017/04/30/用 Hexo + GitHub 搭建博客/flow.png" alt="fow"></p>
-<h2 id="产品介绍"><a href="#产品介绍" class="headerlink" title="产品介绍"></a>产品介绍</h2><ol>
-<li>WordPress<ul>
-<li>PHP语言开发的博客平台，用户可以在支持PHP和MYSQL数据库的服务器上架设博客平台</li>
-</ul>
-</li>
-<li>Jekyll 和 Octopress<ul>
-<li>出于Ruby，通过命令快速生成静态网页,将Markedown转换html，通过GitHub Pages 发布</li>
-<li>只使用命令行进行部署和发布</li>
-<li>性能比较js会略慢</li>
-</ul>
-</li>
-<li>Ghost<ul>
-<li>基于 Node.js，本身就具有发布功能，类似轻量级 WordPress</li>
-<li>有个简化一体化平台</li>
-<li>刚创立不久，文档还不成熟</li>
-</ul>
-</li>
-<li>Hexo<ul>
-<li>基于 Node.js,生成静态Html文件，部署到各个托管平台发布</li>
-<li>效率比 Jekyll 和 Octopress 高</li>
-</ul>
-</li>
-</ol>
-<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><ol>
-<li>Git <ul>
-<li>安装 Git</li>
-<li>创建 用户名</li>
-</ul>
-</li>
-<li>安装 Node.js<h1 id="GitPage"><a href="#GitPage" class="headerlink" title="GitPage"></a>GitPage</h1>前提：已经有github 用户名,已经设置SSH</li>
-</ol>
-<ul>
-<li><p>创建 仓库，名字为 <username>.github.io</username></p>
-<p><img src="/2017/04/30/用 Hexo + GitHub 搭建博客/public.png" alt="public"></p>
-</li>
-<li><p>更换域名<br>如何申请域名，见下面章节</p>
-<p>点击仓库的settings,选择GitHub Pages 的 Custom domain 输入指定的域名,保存</p>
-<p><img src="/2017/04/30/用 Hexo + GitHub 搭建博客/settings.png" alt="settings"></p>
-<p><img src="/2017/04/30/用 Hexo + GitHub 搭建博客/github domain.png" alt="github domain"></p>
-<p>实际效果是 仓库里面的有个CNAME文件,里面内容如下</p>
-<blockquote>
-<p>myblog.org</p>
-</blockquote>
-</li>
-</ul>
-<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><h2 id="1-安装-Hexo"><a href="#1-安装-Hexo" class="headerlink" title="1. 安装 Hexo"></a>1. 安装 Hexo</h2><pre><code>npm install -g hexo-cli
-</code></pre><p>   查看安装版本  <code>hexo -v</code></p>
-<h2 id="2-建站-，folder-即为博客的文件夹"><a href="#2-建站-，folder-即为博客的文件夹" class="headerlink" title="2. 建站 ，folder 即为博客的文件夹"></a>2. 建站 ，folder 即为博客的文件夹</h2><pre><code>hexo init &lt;folder&gt;   // 初始化
-cd &lt;folder&gt;          // 进入博客文件夹
-npm install          // 据博客既定的 dependencies 配置安装所有的依赖包
-</code></pre><p>   博客文件夹如下<br><img src="/2017/04/30/用 Hexo + GitHub 搭建博客/folder.png" alt="folder"></p>
-<p><strong>说明</strong></p>
-<ul>
-<li>source：博客资源文件夹</li>
-<li>source/_drafts:草稿文件夹</li>
-<li>source/_posts:文章文件夹</li>
-<li>themes:存放主题的文件夹</li>
-<li>themes/landscape 默认主题</li>
-<li>_config.yml：全局配置文件</li>
-</ul>
-<h2 id="3-配置博客-config-yml"><a href="#3-配置博客-config-yml" class="headerlink" title="3. 配置博客(_config.yml)"></a>3. 配置博客(_config.yml)</h2><p>注意冒号后面是带空格的</p>
-<ul>
-<li><p>标题等基本信息</p>
-<blockquote>
-<p>参数              描述<br>title            网站标题<br>subtitle        网站副标题<br>description    网站描述<br>author        您的名字<br>language    网站使用的语言<br>timezone    网站时区。Hexo 默认使用您电脑的时区。时区列表。比如说：America/New_York, Japan, 和 UTC </p>
-</blockquote>
-</li>
-<li><p>主题信息<br>  下载主题<br>  <code>git clone https://github.com/iissnan/hexo-theme-next themes/next</code></p>
-<p>  将下载的主题放到 themes 文件夹下,修改配置文件</p>
-<blockquote>
-<p>theme: next</p>
-</blockquote>
-</li>
-<li><p><code>next</code> 文件夹下 <code>config.yml</code> 修改如下</p>
-<blockquote>
-<p>选主题 <code>scheme: Mist</code></p>
-</blockquote>
-</li>
-<li><p>部署信息</p>
-<blockquote>
-<p>deploy:<br>  type: git<br>  repo: git@github.com:xrcx/xrcx.github.io.git<br>  branch: master</p>
-</blockquote>
-</li>
-<li><p><code>post_asset_folder:true</code></p>
-</li>
-</ul>
-<h3 id="菜单设置"><a href="#菜单设置" class="headerlink" title="菜单设置"></a>菜单设置</h3><ol>
-<li>修改 <code>next</code> 主题下的 <code>_config.yml</code>的<code>menu</code>字段<br>其中，home代表主页，categories代表分类页，about代表关于页面，archives代表归档页，commonweal代表404页面（page not found时候显示的页面）。</li>
-<li><p>输入命令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo new page about</div><div class="line">//结果 source\about\index.md</div></pre></td></tr></table></figure>
-</li>
-<li><p>如果是<code>categories</code> 菜单</p>
-<ul>
-<li>hexo new page categories</li>
-<li>categories的 index.md 页面中添加 <code>type: &quot;categories&quot;</code>,就会自动分类</li>
-</ul>
-</li>
-</ol>
-<h2 id="4-部署"><a href="#4-部署" class="headerlink" title="4. 部署"></a>4. 部署</h2><ul>
-<li><p><strong>本地部署，启用本地服务器查看(退出 ctrl+c)</strong></p>
-<pre><code>hexo clean
-hexo g        // hexo generate,生成静态文件
-hexo s         // hexo server
-</code></pre><p>浏览器打开查看效果：<a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a></p>
-</li>
-<li><p><strong>git 部署</strong></p>
-<p>1) 安装 hexo-deployer-git</p>
-<pre><code>npm install hexo-deployer-git --save
-</code></pre><p>2) 部署</p>
-<pre><code>hexo clean
-hexo g        // hexo generate,生成静态文件
-hexo d         //hexo deploy,部署到网站,将本地blog部署到github的仓库
-</code></pre><p>也可以自动部署</p>
-<pre><code>hexo g -d  /  hexo d -g
-</code></pre><p>查看效果，在浏览器输入：<code>&lt;username&gt;.github.io</code> username是你github用户名</p>
-<blockquote>
-<p>注意：用cmd的<code>hexo d</code> 的时候报权限拒绝，网上有说可能是git版本问题，换成1.9的版本即可解决，我直接在<code>git bash</code>中执行<code>hexo d</code>可以部署到github上</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="6-其他问题"><a href="#6-其他问题" class="headerlink" title="6. 其他问题"></a>6. 其他问题</h2><h3 id="6-1-如果首页乱码"><a href="#6-1-如果首页乱码" class="headerlink" title="6.1 如果首页乱码"></a>6.1 如果首页乱码</h3><p><code>_config.yml</code> 这个保存 <code>utf-8</code> 格式保存.并且设置 <code>language: zh-Hans</code></p>
-<h3 id="6-2-使用图片"><a href="#6-2-使用图片" class="headerlink" title="6.2 使用图片"></a>6.2 使用图片</h3><ol>
-<li>插件</li>
-</ol>
-<ul>
-<li>安装插件<br>npm install <a href="https://github.com/CodeFalling/hexo-asset-image" target="_blank" rel="external">https://github.com/CodeFalling/hexo-asset-image</a> –save</li>
-<li>修改_config.yml<br><code>post_asset_folder: true</code></li>
-<li>/source/_posts下创建和md文件同名的目录，在里面放该md需要的图片</li>
-<li>插入图片<br><code>![](目录名/文件名.png)</code></li>
-</ul>
-<ol>
-<li>放在根目录<br>图片放在 source/img 下，然后在 markdown 里写 <code>![img](/source/img/img.png)</code> 。显然这样在本地的编辑器里完全不能正确识别图片的位置。</li>
-</ol>
-<h3 id="6-3-指令"><a href="#6-3-指令" class="headerlink" title="6.3 指令"></a>6.3 指令</h3><ul>
-<li>hexo clean,清缓存</li>
-<li>hexo new ‘postName’,新建文章</li>
-<li>hexo new page ‘pageName’, 新建页面,eg :添加 about 页面</li>
-<li>hexo generate , 生成静态页面到 public 目录</li>
-<li>hexo server , 开启预览访问端口（默认：4000，<code>ctrl+c</code> 关闭 server）</li>
-<li>hexo deploy , 将 .deploy 目录部署到服务器</li>
-</ul>
-<h3 id="6-4-上传readme-md"><a href="#6-4-上传readme-md" class="headerlink" title="6.4 上传readme.md"></a>6.4 上传readme.md</h3><ul>
-<li>在本地写好的 README.mdown 文件复制到 source 文件夹中，再去执行hexo deploy</li>
-<li>在本地写好的 README.md 文件复制到 source 文件夹中，修改Hexo目录下的_config.yml。将skip_render参数的值设置上。skip_render: README.md，再去执行hexo deploy</li>
-</ul>
-<h1 id="申请域名"><a href="#申请域名" class="headerlink" title="申请域名"></a>申请域名</h1><ul>
-<li><p>去<a href="https://wanwang.aliyun.com/?spm=5176.8142029.388261.24.rP16I5" target="_blank" rel="external">万宝</a>注册域名</p>
-</li>
-<li><p>申请完后，添加解析<br><img src="/2017/04/30/用 Hexo + GitHub 搭建博客/jiexi.png" alt="jiexi"></p>
-<p>​</p>
-<p>添加如下解析<br><img src="/2017/04/30/用 Hexo + GitHub 搭建博客/jiexi2.png" alt="jiexi2"></p>
-</li>
-<li><p>在浏览器输入你自己域名，可以查看结果</p>
-</li>
-</ul>
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p>1.<a href="http://pyrinelaw.github.io/2015/09/26/hexo-d/" target="_blank" rel="external">hexo 部署至Git遇到的坑</a><br>2.<a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="external">官方文档</a><br>3.<a href="https://linghucong.js.org/2016/04/15/2016-04-15-hexo-github-pages-blog/" target="_blank" rel="external">手把手教你使用Hexo + Github Pages搭建个人独立博客</a><br>4.<a href="http://theme-next.iissnan.com/getting-started.html" target="_blank" rel="external">Next使用文档</a><br>5.<a href="http://notes.iissnan.com/" target="_blank" rel="external">Next 作者博文</a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2397,7 +2250,7 @@ hexo d         //hexo deploy,部署到网站,将本地blog部署到github的仓�
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
