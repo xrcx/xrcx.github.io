@@ -65,10 +65,12 @@ date: 2017-11-08 23:00:00
 
 
 ## 疑问解答
-
-1. allowed the tanner(制革工人) to stay where he was.
-    - he was 修饰 where
    
-2. There was then much less weight on the donkey(驴)'s back because the water had melted(溶解) the salt.
-    - then 什么意思
+1. There was then much less weight on the donkey(驴)'s back because the water had melted(溶解) the salt.
+    then有几个主要的意思：
+
+    + 当时，那时；到那时
+    + 然后，接着，后来；
+    + 那么，因此
+    这里的then可以理解为上面三个任意一个的意思（但翻译出来其实可以忽略它），去掉Then也不影响句子的理解，这里用上，会更强调句子的因果性，以及时间感（驴一踏进水里，背上就轻了许多）~
   
